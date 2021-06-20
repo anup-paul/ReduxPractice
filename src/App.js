@@ -9,6 +9,8 @@ import {
 import Header from "./Components/Header/Header";
 import Home from "./Components/Home/Home";
 import Books from "./Components/Books/Books";
+import CountryInfo from "./Components/Countries/CountryInfo";
+import ReadingList from "./Components/Books/ReadingList";
 
 function App() {
   return (
@@ -17,11 +19,20 @@ function App() {
       <Router>
         <Header></Header>
         <Switch>
+          <Route exact path="/">
+            <Home></Home>
+          </Route >
           <Route path="/home">
             <Home></Home>
           </Route >
+          <Route path="/country/:id" >
+            <CountryInfo></CountryInfo>
+          </Route>
           <Route path="/books">
             <Books></Books>
+          </Route>
+          <Route path="/readingList">
+            <ReadingList></ReadingList>
           </Route>
         </Switch>
       </Router>

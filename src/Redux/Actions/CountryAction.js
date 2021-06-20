@@ -1,5 +1,5 @@
 
-export const loadCountries = (payload) => {
+export const loadCountries = () => {
     return (dispatch, getState) => {
         fetch('https://restcountries.eu/rest/v2/all')
             .then(res => res.json())
@@ -12,4 +12,11 @@ export const loadCountries = (payload) => {
             })
     }
 
+}
+
+export const countyInfo = (payload) => {
+    return{
+        type:"COUNTRY_INFO",
+        payload
+    }
 }
